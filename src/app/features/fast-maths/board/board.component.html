@@ -1,0 +1,39 @@
+<mat-card appearance="outlined" class="wrapper">
+  <mat-card-header>
+    <mat-card-title class="mb-3">Find the Correct Answer</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row align-items-center">
+      <div class="col h2">{{ firstNumber }}</div>
+
+      <div class="col h2">{{ selectedOperation }}</div>
+
+      <div class="col h2">{{ secondNumber }}</div>
+
+      <div class="col h2">=</div>
+
+      <div class="col h2">
+        <input
+          #result
+          type="number"
+          class="form-control input-box text-center"
+          [(ngModel)]="selectedAnswer"
+        />
+      </div>
+
+      <div class="col d-flex gap-3">
+        <button
+          [disabled]="!selectedAnswer"
+          type="button"
+          class="btn btn-primary"
+          (click)="onCheck(result)"
+        >
+          CHECK
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="onCalculate()">
+          RESET
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

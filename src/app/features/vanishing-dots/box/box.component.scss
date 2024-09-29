@@ -1,0 +1,12 @@
+.box {
+  width: 6rem;
+  height: 6rem;
+  position: relative;
+  background: #000000;
+  box-sizing: border-box;
+  border: 0.125rem solid #ffffff;
+}
+
+.hidden > * {
+  display: none;
+}

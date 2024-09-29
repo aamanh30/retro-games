@@ -1,0 +1,15 @@
+<mat-grid-list cols="2">
+  @for (card of (cards$ | async); track card) {
+  <mat-grid-tile (click)="onClick(card.routerLink)">
+    <p class="cursor-pointer">
+      <img
+        class="img-fluid retro-icon"
+        [src]="card.iconLink"
+        [alt]="card.label"
+        [title]="card.label"
+      />
+      <strong class="mx-2">{{ card.label | uppercase }}</strong>
+    </p>
+  </mat-grid-tile>
+  }
+</mat-grid-list>

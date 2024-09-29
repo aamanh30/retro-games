@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class="overlay" *ngIf="!gameStarted"></div>
+  <div class="message">
+    <ng-container
+      *ngIf="gameStarted; then showGreeting; else showTime"
+    ></ng-container>
+  </div>
+
+  <ng-template #showTime>
+    <h2>Game starts in : {{ gameSeconds }} seconds</h2>
+  </ng-template>
+
+  <ng-template #showGreeting>
+    <h2>Click the boxes where the circles appeared</h2>
+  </ng-template>
+
+  <div id="matrix-wrap">
+    <div
+      class="item"
+      *ngFor="let item of matrix; let i = index"
+      (click)="checkActive(i)"
+    >
+      <app-box [box]="item"></app-box>
+    </div>
+  </div>
+
+  <div class="message" *ngIf="gameStarted">
+    <h2>{{ gameEnded ? "Correct Answer" : "Game started! All the Best" }}</h2>
+  </div>
+</div>

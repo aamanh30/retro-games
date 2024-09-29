@@ -1,0 +1,35 @@
+.wrapper {
+  width: 50%;
+  max-width: 600px;
+  min-width: 600px;
+  margin: auto;
+}
+
+.wrapper > .overlay {
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  margin: 0px 0px;
+}
+
+.wrapper #matrix-wrap {
+  clear: both;
+  overflow: auto;
+}
+
+.wrapper .message {
+  text-align: center;
+}
+
+#matrix-wrap .item:hover {
+  opacity: 0.5;
+}
+
+.wrapper .item {
+  float: left;
+  margin: 0px 0px;
+}

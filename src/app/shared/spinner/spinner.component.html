@@ -1,0 +1,11 @@
+<div
+  class="spinner spinner-border"
+  role="status"
+  [ngClass]="{
+    'size-sm': toastType === ToastType.small,
+    'size-md': toastType === ToastType.medium,
+    'size-lg': toastType === ToastType.large
+  }"
+>
+  <span class="visually-hidden">Loading...</span>
+</div>
